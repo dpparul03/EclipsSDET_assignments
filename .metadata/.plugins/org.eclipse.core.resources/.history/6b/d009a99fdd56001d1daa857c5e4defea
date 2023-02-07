@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="DsAlgo">
+  <parameter name="browser" value="chrome"/>
+  <classes>
+      <class name="TestCase_ds_algo.HomePageTest"/>
+        
+    </classes>
+  </test> <!-- DsAlgo -->
+</suite> <!-- Suite -->

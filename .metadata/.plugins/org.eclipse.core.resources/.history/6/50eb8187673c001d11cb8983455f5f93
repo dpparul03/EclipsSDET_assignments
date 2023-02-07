@@ -1,0 +1,46 @@
+package selenium;
+
+
+
+
+
+
+import java.util.NoSuchElementException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TutorialsNinjaProject {
+
+
+	public static void main (String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","C:\\Deepak\\Parul_Learning\\SDET81\\Assignment\\Maven_1\\src\\test\\resources\\drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://tutorialsninja.com/demo/index.php \r\n"+ "");
+				
+	
+		driver.manage().window().maximize();
+		
+		WebElement Currency=driver.findElement(By.xpath("//button[@class='btn btn-link dropdown-toggle']"));
+		Currency.click();
+		WebElement euroEle = driver.findElement(By.xpath("//button[@name='EUR']"));
+		euroEle.click();
+		
+		driver.findElement(By.xpath("(//div[@class='product-thumb transition']//a)[8]")).click();
+		Thread.sleep(200);
+    
+     
+		driver.findElement(By.xpath("//button[@id='button-cart']")).click();
+		Boolean option=driver.findElement(By.xpath("//select[@id='input-option226']")).isSelected();
+		Thread.sleep(500);
+	
+		
+		
+	
+
+     }
+	
+	}
+

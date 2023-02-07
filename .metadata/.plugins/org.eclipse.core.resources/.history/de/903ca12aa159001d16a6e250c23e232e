@@ -1,0 +1,29 @@
+package TestCase_ds_algo;
+
+import org.testng.annotations.Test;
+
+import Page_object_ds_algo.HomePage;
+import Page_object_ds_algo.RegistrationPage;
+
+
+public class RegistrationTest extends BaseClass {
+	
+	
+	@Test
+	public void registrorpageDDT() throws InterruptedException {
+		
+	 HomePage hmPage= new HomePage(driver);
+	 Thread.sleep(1000);
+	 hmPage.clickGetStartedPage();
+	 Thread.sleep(1000);
+	 hmPage.clickSignInPage ();
+	 
+	RegistrationPage rpg= new  RegistrationPage (driver);
+	Thread.sleep(1000);
+	  rpg.RegistrationBtn();
+	  Thread.sleep(1000);
+	 rpg.clickRegistrationBtn();
+	 Thread.sleep(1000);
+	 rpg.UserName(username);
+}
+}

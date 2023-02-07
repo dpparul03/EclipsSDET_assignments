@@ -1,0 +1,150 @@
+package ds_algo;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+
+public class ListedPage{
+
+	private static final String Sendkey = null;
+
+
+	WebDriver driver;
+
+
+	 @FindBy(xpath ="//body[1]/div[1]/div[1]/div[1]/a[1]/button[1]") WebElement GetStartbtn;        
+	@FindBy (xpath ="//a[@class='navbar-brand']") WebElement HomePageBtn;
+	@FindBy (xpath ="//a[normalize-space()='Data Structures']")WebElement DataStructures;
+	@FindBy (xpath ="//a[@href='linked-list']")WebElement LinkedListedGetStartedBtn;
+    @FindBy (xpath ="//div[@class='alert alert-primary']")WebElement GetError;
+	@FindBy (xpath = "//a[normalize-space()='Sign in'] ")WebElement SignIn;
+	@FindBy (xpath ="//a[normalize-space()='Register!']" )WebElement Register;
+	
+	@FindBy (xpath ="//input[@value='Register']")WebElement RegisterBtn;
+	
+	@FindBy (xpath = "//input[@id='id_username']")WebElement UserName;
+	@FindBy (xpath = "//input[@id='id_password1'] ")WebElement Password;
+	@FindBy (xpath = "//input[@id='id_password2'] ")WebElement ConfirmPassword;
+	@FindBy (xpath ="//input[@value='Register']")WebElement ClickRegisterBtn;
+	
+	
+/*	
+	@FindBy (xpath = "//input[@id='id_username']")WebElement UserName2;
+	@FindBy (xpath = "//input[@id='id_password1'] ")WebElement Password1;
+	@FindBy (xpath ="//input[@value='Register']")WebElement ClickOnRegisterBtn;	
+	
+	//@FindBy (xpath = "//input[@id='id_username']")WebElement ClearUserName;
+	@FindBy (xpath = "//input[@id='id_username']")WebElement UserName3;
+	@FindBy (xpath = "//input[@id='id_password1'] ")WebElement Password2;
+	@FindBy (xpath = "//input[@id='id_password2'] ")WebElement Password3;
+	@FindBy (xpath ="//input[@value='Register']")WebElement ClickOnRegisterBtn1;
+	
+	
+	@FindBy (xpath = "//input[@id='id_username']")WebElement UserName4;
+	@FindBy (xpath = "//input[@id='id_password1'] ")WebElement Password4;
+	@FindBy (xpath = "//input[@id='id_password2'] ")WebElement Password5;
+	@FindBy (xpath ="//input[@value='Register']")WebElement ClickRegBtn;
+	
+	@FindBy (xpath = "//input[@id='id_username']")WebElement UserName5;
+	@FindBy (xpath = "//input[@id='id_password1'] ")WebElement Pssword;
+	@FindBy (xpath = "//input[@id='id_password2'] ")WebElement Pasword;
+	@FindBy (xpath ="//input[@value='Register']")WebElement ClickOnRegBtn;
+	
+	*/
+	
+
+	@BeforeTest
+	public void intialize () throws IOException{
+		System.setProperty("webdriver.chrome.driver","C:\\Deepak\\Parul_Learning\\SDET81\\Assignment\\Maven_1\\src\\test\\resources\\drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
+	}
+
+	@Test
+	public void homePage() throws InterruptedException {	
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));	
+		driver.manage().window().maximize(); 	
+		driver.get("https://dsportalapp.herokuapp.com");
+		PageFactory.initElements( driver, this);
+		
+    
+          GetStartbtn.click();
+		   HomePageBtn.click();
+		   DataStructures.click();
+		   LinkedListedGetStartedBtn.click();
+		    
+		    SignIn.click();
+		    
+		    Register.click() ;
+		  
+		    RegisterBtn.click();
+		   
+		    UserName.sendKeys("zee");
+		     ClickRegisterBtn.click(); 
+		    Thread.sleep(1000);
+		    UserName.clear();
+		   
+		    UserName.sendKeys("zenny");
+		     Password.sendKeys("ABC123"); 
+		     ClickRegisterBtn.click();
+		     Thread.sleep(1000);
+		     UserName.clear();
+		     
+		     UserName.sendKeys("rose");
+		     Password.sendKeys("try12345"); 
+			    ConfirmPassword.sendKeys("t1234567"); 
+			    ClickRegisterBtn.click();
+			    Thread.sleep(1000);
+			    UserName.clear();
+		     
+			    UserName.sendKeys("mily");
+			    Password.sendKeys("ab");
+			    ConfirmPassword.sendKeys("ab");
+			    Thread.sleep(1000);
+			    ClickRegisterBtn.click();
+		    
+		
+		    UserName.sendKeys("Parul03");
+		    Password.sendKeys("User#12345");
+		    ConfirmPassword.sendKeys("User#12345");
+		    ClickRegisterBtn.click();
+		    
+		    SignIn.click();
+		    UserName.sendKeys("Parul03");
+		    
+		    
+		    
+		    
+	}
+	
+	
+	
+
+	
+	}    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+package TestCase_ds_algo;
+
+import java.time.Duration;
+
+import org.apache.log4j.PropertyConfigurator;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
+
+import utilities.ReadConfig;
+
+public class BaseClass {
+
+
+
+	ReadConfig readconfig=new ReadConfig();
+	
+	 public String baseUrl=readconfig.getApplicationURL();
+	 public String username=readconfig.getUsername();
+	 public String password=readconfig.getPassword();
+	 public static Logger logger;
+	 public static WebDriver driver;	
+	 
+	
+	 @Parameters("browser")
+	 @BeforeSuite
+	public void setup(String br)
+	{
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));	
+		driver.manage().window().maximize(); 	
+		driver.get("https://dsportalapp.herokuapp.com");
+		
+	  logger=Logger.getLogger("BaseClass.class");
+	PropertyConfigurator.configure("Log4j.properties");
+	
+	if(br.equals("chrome"))
+	   {	
+	     System.setProperty("webdriver.chrome.driver",readconfig.getChromePath());
+	     driver = new ChromeDriver();
+	   }
+	   else if(br.equals("edge"))
+	   {
+		 System.setProperty("webdriver.edge.driver",readconfig.getMSEdgePath());
+	     driver = new EdgeDriver();
+	   }
+		
+	driver.get(baseUrl);
+	}
+	
+	
+	
+	
+	@AfterSuite
+	public void tearDown()
+		{
+		driver.quit();
+	}
+	
+	
+	
+	
+}

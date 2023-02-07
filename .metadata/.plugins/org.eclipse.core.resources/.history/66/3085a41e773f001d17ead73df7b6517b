@@ -1,0 +1,14 @@
+package PAVAN_ASSIGNMENT;
+
+public class ASSIGN_1 {
+
+	public static void main(String[] args) {
+	
+	System.out.println("Hello");
+	
+	
+	System.out.println("parul");
+	
+	
+}
+}

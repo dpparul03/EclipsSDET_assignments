@@ -1,0 +1,105 @@
+package selenium;
+
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ShoppingForDress {
+
+
+	
+
+	public static void main (String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","C:\\Deepak\\Parul_Learning\\SDET81\\Assignment\\Maven_1\\src\\test\\resources\\drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://automationpractice.com/index.php");
+
+		
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		
+		driver.manage().window().maximize();
+
+	
+		  WebElement dress =driver.findElement( By.xpath("  //div[@id='block_top_menu']/ul/li[2]/a"));
+		 dress.click();
+					
+
+	    WebElement clcksummerdress =driver.findElement( By.xpath("//input[@id='layered_category_11']"));
+		 clcksummerdress.click();
+			
+		
+		 
+		/*
+explicit wait-		WebDriverWait Wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+	   Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@class='product_list grid row']/li/div/div/div/a/img")));
+		 
+fluent wait-	 Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				  .withTimeout(Duration.ofSeconds(10))
+				  .pollingEvery(Duration.ofSeconds(2))
+				  .ignoring(NoSuchElementException.class); */
+		 Thread.sleep(1000);
+		  WebElement clickondress=driver.findElement( By.xpath("//ul[@class='product_list grid row']/li/div/div/div/a/img"));
+		  clickondress.click();
+	  
+		 
+	
+
+		WebDriverWait Wait = new WebDriverWait (driver, Duration.ofSeconds(10));
+	   Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='box-cart-bottom']/div/p/button/span")));
+		 	 
+		  WebElement addtocart	=driver.findElement( By.xpath("//div[@class='box-cart-bottom']/div/p/button/span"));
+		 addtocart.click();
+	  
+		
+		
+		//  WebElement clickondresses =driver.findElement( By.xpath("  //div[@id='block_top_menu']/ul/li[2]/a"));
+			//clickondresses.click();
+		//				
+
+			// WebElement blackdresses =driver.findElement( By.xpath("//ul[@class='product_list grid row']/li[2]/div/div/div/a/img"));
+			//	blackdresses.click();
+		//
+
+			
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	private static void WibDriverWait(WebDriver driver, Duration ofSeconds) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void until(ExpectedCondition<WebElement> elementToBeClickable) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	}
+

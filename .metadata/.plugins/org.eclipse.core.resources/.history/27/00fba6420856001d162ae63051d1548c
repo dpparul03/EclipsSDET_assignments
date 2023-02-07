@@ -1,0 +1,43 @@
+package TestCase_ds_algo;
+
+import org.testng.annotations.Test;
+
+import Page_object_ds_algo.HomePage;
+
+      public class HomePageTest extends BaseClass {
+	
+
+     
+	@Test
+     
+     public void loginpage() throws InterruptedException {
+    	  
+   
+	HomePage lgPage= new HomePage (driver);
+	
+	
+   lgPage.clickGetStartedPage();
+   Thread.sleep(1000);
+   lgPage.clickHomePage (); 
+   Thread.sleep(1000);
+   lgPage.clickdataStructurePage (); 
+   Thread.sleep(1000);
+   lgPage.clickSignInPage (); 
+   
+   
+   
+   
+   
+   
+}
+
+	
+		
+	
+
+
+	}
+
+	
+		
+	

@@ -1,0 +1,62 @@
+package selenium;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ShoppingForDress {
+
+
+	public static void main (String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","C:\\Deepak\\Parul_Learning\\SDET81\\Assignment\\Maven_1\\src\\test\\resources\\drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		
+		driver.manage().window().maximize();
+
+		
+		
+
+	    WebElement clcksummerdress =driver.findElement( By.xpath("//input[@id='layered_category_11']"));
+		 clcksummerdress.click();
+			
+	
+		 WebElement searchsummerdress =driver.findElement( By.xpath("//ul[@class='product_list grid row']/li/div/div/div/a/img"));
+	    searchsummerdress.click();
+				
+		
+		
+		
+		
+		
+		
+
+			
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

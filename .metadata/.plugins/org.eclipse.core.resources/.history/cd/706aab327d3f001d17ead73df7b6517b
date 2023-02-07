@@ -1,0 +1,50 @@
+package PAVAN_ASSIGNMENT;
+
+public class ASSIGN_1 {
+
+	
+	// simple program
+	
+	public static void main(String[] args) {
+	
+	System.out.println("Hello");
+	
+	
+	System.out.println("parul");
+	
+	//print sum of two number
+	
+	
+	int a =74 ;
+     int b =36	;
+	
+	
+     System.out.println("sum of two number : " + ( a+ b) );
+     
+     
+     //swap two number
+     
+     
+     
+     int a=10 ;
+     int b=20 ;
+    int c;	
+    
+     c=a;
+     a=b  ;
+     b=c ;
+     
+     
+     System.out.println("a value is:" +a);
+     
+     System.out.println("b value is:" + b );
+     
+     
+     
+     
+     
+     
+     
+    		 
+}
+}

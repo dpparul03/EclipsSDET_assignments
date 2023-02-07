@@ -1,0 +1,48 @@
+package ds_algo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class DSALGO {
+
+	
+	WebDriver driver;
+	
+
+	@FindBy (xpath  =" //button[@class='btn']") WebElement GetStart;
+	@FindBy (xpath ="//a[@class='navbar-brand']") WebElement HomePage;
+	@FindBy (className ="nav-link dropdown-toggle")WebElement DataStructures;
+	@FindBy (xpath ="//body/div[3]/div[1]/div/div/a")WebElement GetStarted;
+
+
+	DSALGO(WebDriver d){
+		
+		driver =d;
+		
+		PageFactory.initElements(d, this);
+		
+	}	
+		
+	
+		public void clickGetStart() {
+			GetStart.click();
+		}	
+			
+		public void clickHomePage() {
+			HomePage.click();
+		}
+
+		public void clickDataStructures() {
+			DataStructures.click();
+		
+		}	
+		public void clickGetStarted() {
+			GetStarted.click();
+			
+	}	
+			
+	}	
+			
+			

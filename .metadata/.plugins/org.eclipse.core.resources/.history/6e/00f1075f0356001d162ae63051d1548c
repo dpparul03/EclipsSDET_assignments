@@ -1,0 +1,51 @@
+package Page_object_ds_algo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPage {
+
+	WebDriver driver;
+	
+	public LoginPage (WebDriver driver) {
+	
+		this.driver = driver;
+		PageFactory.initElements( driver, this  );
+		
+	}
+
+	 @FindBy(xpath ="//body[1]/div[1]/div[1]/div[1]/a[1]/button[1]") WebElement GetStartbtn;        
+	@FindBy (xpath ="//a[@class='navbar-brand']") WebElement HomePageBtn;
+	@FindBy (xpath ="//a[normalize-space()='Data Structures']")WebElement DataStructures;
+	
+    @FindBy (xpath ="//div[@class='alert alert-primary']")WebElement GetError;
+	@FindBy (xpath = "//a[normalize-space()='Sign in'] ")WebElement SignIn;
+	
+	public void clickonGetStartedPage1() {
+	}	
+	public void clickonGetStartedPage () {
+	 GetStartbtn.click();
+	}
+	
+	public void clickHomePage () {
+	HomePageBtn.click();
+	}
+	
+	public void clickdataStructurePage () {
+	 DataStructures.click();
+	}  
+	
+	
+	public void clickSignInPage () {
+	   SignIn.click();
+}
+
+	
+		
+	}
+
+	
+		
+	}

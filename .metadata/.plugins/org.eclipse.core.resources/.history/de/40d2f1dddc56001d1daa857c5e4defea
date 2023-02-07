@@ -1,0 +1,5 @@
+baseURL=https://dsportalapp.herokuapp.com
+username=Parul03
+password=User#123
+chromepath=./drivers\\chromedriver.exe
+msedgepath=./Drivers\\msedgedriver.exe

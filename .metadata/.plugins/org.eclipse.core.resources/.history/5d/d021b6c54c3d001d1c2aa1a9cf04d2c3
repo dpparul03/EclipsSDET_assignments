@@ -1,0 +1,211 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class TutorialsNinjaProject {
+
+
+	public static void main (String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","C:\\Deepak\\Parul_Learning\\SDET81\\Assignment\\Maven_1\\src\\test\\resources\\drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://tutorialsninja.com/demo/index.php \r\n"+ "");
+
+
+		driver.manage().window().maximize();
+
+		Thread. sleep (1000);
+
+		WebElement cur =driver.findElement( By.xpath(" //div[@class='pull-left']/form/div/button/span"));
+		cur.click();
+
+		Thread. sleep (1000);
+
+		WebElement curnc =driver.findElement( By.xpath("//div/div/form/div/button/span/../../ul/li/button[@name='EUR'] "));
+		curnc.click();
+
+		Thread. sleep (1000);
+
+		WebElement cart =driver.findElement( By.xpath(" //div[@id='content']/div[2]/div[4]/div/div[3]/button/i"));
+		cart.click();
+
+
+		try
+		{
+			WebElement selectcamera = driver.findElement(By.xpath("//select[@id='input-option226']"));
+			Select dropDown = new Select( selectcamera);
+			dropDown.selectByIndex(1);
+		}
+		catch(Exception e) {
+			System.out.println("unavailable to select camera" +e.getMessage());
+
+			Thread. sleep (1000);
+
+
+			WebElement home =driver.findElement( By.xpath("//i[@class='fa fa-home'] "));
+			home.click();
+
+			Thread. sleep (1000);
+
+			WebElement image =driver.findElement( By.xpath(" //div[@id='content']/div[2]/div[2]/div/div/a/img"));
+			image.click();
+
+			Thread. sleep (1000);
+
+			WebElement phonequant =driver.findElement(By.xpath("//div[@id='product']/div/input"));
+			phonequant.clear(); 
+			phonequant.sendKeys("2");
+
+			Thread. sleep (1000);
+
+			WebElement addcart =driver.findElement( By.xpath(" //div[@id='product']/div/input[2]/../../div/button"));
+			addcart.click();
+
+			Thread. sleep (1000);
+
+			WebElement success =driver.findElement( By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+			success.click();
+			System.out.println(success.getText());
+
+			Thread. sleep (1000);
+
+			WebElement clickcart =driver.findElement( By.xpath("//div[@class='col-sm-3']/div/button/span"));
+			clickcart.click();
+
+			Thread. sleep (1000);
+
+			WebElement viewcart =driver.findElement( By.xpath("//div[@class='col-sm-3']/div/button/span/../../ul/li[2]/div/p/a/strong"));
+			viewcart.click();
+
+			Thread. sleep (1000);
+
+			WebElement phonequantity =driver.findElement( By.xpath("//input[@class='form-control']"));
+			phonequantity.clear();
+			phonequantity.sendKeys("3");
+
+
+			WebElement update =driver.findElement( By.xpath("//input[@class='form-control']/.././span/button/i[1]"));
+			update.click();
+
+
+			WebElement taxEle =driver.findElement(By.xpath("//div[@class='col-sm-4 col-sm-offset-8']/table/tbody/tr[2]/td/strong"));
+			String Ecotax = taxEle.getText();
+			System.out.println("Ecotax value: " + Ecotax); 
+
+			WebElement vatEle =driver.findElement(By.xpath("//div[@class='col-sm-4 col-sm-offset-8']/table/tbody/tr/td[2]/../../../../table/tbody/tr[3]/td/strong"));
+			String vat = vatEle.getText();
+			System.out.println(" VAT: " + vat); 
+
+			Thread. sleep (1000);
+
+			WebElement checkout =driver.findElement( By.xpath("//div[@class='buttons clearfix']/div[2]/a"));
+			checkout.click();
+
+			WebElement stockout = driver.findElement(By.xpath("//div[@class='alert alert-danger alert-dismissible']"));
+			System.out.println(stockout.getText()); 
+
+			Thread. sleep (1000);
+
+			WebElement updatecart=driver.findElement( By.xpath("//span[@id='cart-total']"));
+			updatecart.click();
+
+			Thread. sleep (1000);
+
+			WebElement removeitem=driver.findElement( By.xpath("//span[@id='cart-total']/../../ul/li/table/tbody/tr/td[5]/button"));
+			removeitem.click();
+
+
+			Thread. sleep (1000);
+
+			WebElement backhome=driver.findElement( By.xpath("//div[@class='pull-right']/a"));
+			backhome.click();
+
+
+			WebElement macbook=driver.findElement( By.xpath("//div[@class='image']/a/img"));
+			macbook.click();
+
+
+			WebElement adcart=driver.findElement( By.xpath("//div[@id='product']/div/input[2]/../button"));
+			adcart.click();
+
+			Thread. sleep (1000);
+
+			WebElement successmsg=driver.findElement( By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+			successmsg.click();
+			System.out.println(successmsg.getText());
+
+			WebElement shopcart=driver.findElement( By.xpath("//div[@id='top-links']/ul/li[4]/a/span"));
+			shopcart.click();
+
+			Thread. sleep (1000);
+
+
+			WebElement coupon=driver.findElement( By.xpath("//div[@class='panel-group']/div/div/h4/a"));
+			coupon.click();
+
+			WebElement adcoupon=driver.findElement( By.xpath("//input[@id='input-coupon']"));
+			adcoupon.sendKeys("ABCD123");
+
+			WebElement couponaply=driver.findElement( By.xpath("//input[@id='input-coupon']/../span/input"));
+			couponaply.click();
+
+
+			Thread. sleep (1000);
+
+			WebElement errormessage=driver.findElement( By.xpath("//div[@class='alert alert-danger alert-dismissible']"));
+			errormessage.click();
+			System.out.println(errormessage.getText());
+
+			Thread. sleep (1000);
+
+			WebElement giftcard=driver.findElement( By.xpath("//a[@href='#collapse-voucher']"));
+			giftcard.click();
+
+
+			WebElement adgiftcard=driver.findElement( By.xpath("//input[@name='voucher']"));
+			adgiftcard.sendKeys(" AXDFGH123");
+
+
+			WebElement clickaply=driver.findElement( By.xpath("//input[@name='voucher']/../span/input"));
+			clickaply.click();
+
+			Thread. sleep (1000);
+
+			WebElement giftcarderror=driver.findElement( By.xpath("//div[@class='alert alert-danger alert-dismissible']"));
+			giftcarderror.click();
+			System.out.println(giftcarderror.getText());
+
+
+			WebElement clearcoupon=driver.findElement( By.xpath("//div[@class='panel-group']/div/div/h4/a"));
+			clearcoupon.click();
+
+			Thread.sleep (1000);
+
+			WebElement clncoupon=driver.findElement( By.xpath("//input[@id='input-coupon']"));
+			clncoupon.clear();
+
+
+			WebElement opengiftcard=driver.findElement( By.xpath("//a[@href='#collapse-voucher']"));
+			opengiftcard.click();
+			
+			Thread.sleep (1000);
+
+			
+			WebElement removegiftcard=driver.findElement( By.xpath("//input[@name='voucher']"));
+			removegiftcard.clear();
+
+			
+			WebElement chekout=driver.findElement( By.xpath("///div[@class='buttons clearfix']/div[2]/a"));
+			chekout.click();
+			
+			
+			
+
+
+}
+
+}
+}

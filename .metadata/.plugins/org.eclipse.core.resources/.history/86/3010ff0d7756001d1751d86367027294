@@ -1,0 +1,55 @@
+package TestCase_ds_algo;
+
+import java.time.Duration;
+
+import org.apache.log4j.PropertyConfigurator;
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import utilities.ReadConfig;
+
+public class BaseClass {
+
+	ReadConfig readconfig=new ReadConfig();
+	
+	 public String baseUrl=readconfig.getApplicationURL();
+	 public String username=readconfig.getUsername();
+	 public String password=readconfig.getPassword();
+	 
+	 
+	
+	WebDriver driver = null;
+	public static Logger logger;
+	
+
+	@BeforeSuite
+	
+	public void setup()
+	{
+		System.setProperty("webdriver.chrome.driver",readconfig.getChromePath());
+		driver = new ChromeDriver();
+		
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));	
+		driver.manage().window().maximize(); 	
+		driver.get("https://dsportalapp.herokuapp.com");
+		
+	
+	  logger=Logger.getLogger("BaseClass.class");
+	PropertyConfigurator.configure("Log4j.properties");
+	
+	}
+	
+	
+	@AfterSuite
+	public void tearDown()
+		{
+		driver.quit();
+	}
+	
+	
+	
+	
+}

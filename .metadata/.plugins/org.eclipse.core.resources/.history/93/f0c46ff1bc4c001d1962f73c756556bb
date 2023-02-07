@@ -1,0 +1,40 @@
+package ds_algo;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+public class ObjectTest {
+
+	
+	
+	
+	
+	@Test
+	public void verifyObject() {
+	
+	
+
+	System.setProperty("webdriver.chrome.driver","C:\\Deepak\\Parul_Learning\\SDET81\\Assignment\\Maven_1\\src\\test\\resources\\drivers\\chromedriver.exe");
+	WebDriver driver = new ChromeDriver();
+	
+	RegestraionPage ReGePage = new RegestraionPage(driver);
+	
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));	
+	
+	driver.manage().window().maximize(); 	
+	
+	
+	
+	driver.get("https://dsportalapp.herokuapp.com");
+	 ReGePage .clickOnGetStartBtn();
+	 ReGePage .clickOnHomePageBtn();
+	 ReGePage .clickOnDataStructuresBtn();
+	 ReGePage .clickOnGetStartedBtn();
+	
+	
+	}	
+}

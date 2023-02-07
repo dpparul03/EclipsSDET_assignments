@@ -1,0 +1,49 @@
+package TestCase_ds_algo;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import Page_object_ds_algo.HomePage;
+
+      public class HomePageTest extends BaseClass {
+	
+  
+	@Test
+     
+     public void loginpage() throws InterruptedException {
+    	  	
+	logger.info("URL is opned");
+		
+   HomePage lgPage= new HomePage (driver);
+   Thread.sleep(1000);
+   lgPage.clickGetStartedPage();
+   Thread.sleep(1000);
+   lgPage.clickHomePage (); 
+   Thread.sleep(1000);
+   lgPage.clickdataStructurePage ();
+   Thread.sleep(1000);
+   lgPage.clickDataGetStartedbtn ();
+   Thread.sleep(1000);
+   lgPage.clickSignInPage (); 
+   Thread.sleep(1000);
+   logger.info("Clicked on signin");
+   
+   
+   if(driver.getTitle().equals("You are logged in"));
+   {
+	   Assert.assertTrue(true);
+	   logger.info("Login test passed");
+   }
+  
+
+	}
+      }
+		
+	
+
+
+	
+
+	
+		
+	

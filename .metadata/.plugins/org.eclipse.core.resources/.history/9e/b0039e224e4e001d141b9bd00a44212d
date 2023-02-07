@@ -1,0 +1,101 @@
+package ds_algo;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+
+public class ListedPage{
+
+	WebDriver driver;
+
+	
+public  ListedPage (WebDriver driver) {   
+		this.driver= driver;
+	}
+	
+	@FindBy (xpath  =" //button[@class='btn']") WebElement GetStartBtn;
+	@FindBy (xpath ="//a[@class='navbar-brand']") WebElement HomePageBtn;
+	@FindBy (className ="nav-link dropdown-toggle")WebElement DataStructures;
+	@FindBy (xpath ="//body/div[3]/div[1]/div/div/a")WebElement GetStartedBtn;
+
+	
+	ListedPage  page = PageFactory.initElements(driver,ListedPage .class);
+	
+	public void clickGetstartBtn() {
+		GetStartBtn.click();
+	
+	}
+		
+	public void clickHomePageBtn() {	
+		HomePageBtn.click();
+		
+	}
+	
+	public void clickDataStructuresBtn() {	
+		DataStructures.click();
+	}
+	
+	public void clickGetStartedBtn() {	
+		 GetStartedBtn.click();
+	}
+		
+	/*
+	public void link () throws Exception {
+			
+		ListedPage  page = PageFactory.initElements(driver,ListedPage .class);
+
+
+		GetStartBtn.click();
+
+		HomePageBtn.click();
+
+		DataStructures.click();
+
+		GetStartedBtn.click();
+
+	}
+*/
+	
+
+@BeforeMethod
+
+	public void intialize () throws IOException{
+
+		System.setProperty("webdriver.chrome.driver","C:\\Deepak\\Parul_Learning\\SDET81\\Assignment\\Maven_1\\src\\test\\resources\\drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));	
+		driver.get("https://dsportalapp.herokuapp.com");
+		driver.manage().window().maximize(); 
+
+
+
+	}	
+	
+
+	
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+

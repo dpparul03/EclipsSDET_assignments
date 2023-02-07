@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;vijay_class_assignments.Assignments1&apos; to &apos;Average_Marks_Assignments1&apos;&#x0D;&#x0A;- Original project: &apos;SDET81&apos;&#x0D;&#x0A;- Original element: &apos;vijay_class_assignments.Assignments1&apos;&#x0D;&#x0A;- Renamed element: &apos;vijay_class_assignments.Average_Marks_Assignments1&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Assignments1&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;vijay_class_assignments{Assignments1.java[Assignments1" matchStrategy="1" name="Average_Marks_Assignments1" qualified="false" references="true" similarDeclarations="false" stamp="1671476138925" textual="false" version="1.0"/>
+</session>

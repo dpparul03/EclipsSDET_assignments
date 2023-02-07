@@ -1,0 +1,64 @@
+package page_object;
+
+import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class Ds_Algo_First_Project {
+
+	
+	WebDriver driver;
+
+		  // <input name="user_name" type="text" value="">
+		  @FindBy(css=".btn")WebElement getStarted;
+		    
+			@FindBy (xpath ="//a[@class='navbar-brand']") WebElement HomePageBtn;
+			@FindBy (className ="nav-link dropdown-toggle")WebElement DataStructures;
+			@FindBy (xpath ="//body/div[3]/div[1]/div/div/a")WebElement GetStartedBtn;
+		  public Ds_Algo_First_Project(WebDriver driver){
+		    this.driver = driver;
+		  
+             getStarted.click();
+			  
+			  HomePageBtn.click();
+
+			 DataStructures.click();
+
+			  GetStartedBtn.click();
+		  }  
+			  
+		  @BeforeTest
+			public void intialize () throws IOException{
+
+				System.setProperty("webdriver.chrome.driver","C:\\Deepak\\Parul_Learning\\SDET81\\Assignment\\Maven_1\\src\\test\\resources\\drivers\\chromedriver.exe");
+				driver = new ChromeDriver();
+			}		  
+			  
+			  
+		  
+             @Test
+                 public void homePage() {	
+	         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));	
+	         driver.manage().window().maximize(); 	
+	         driver.get("https://dsportalapp.herokuapp.com");
+
+	         PageFactory.initElements( driver, this);
+
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+}

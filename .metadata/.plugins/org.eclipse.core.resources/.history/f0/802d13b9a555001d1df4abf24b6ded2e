@@ -1,0 +1,31 @@
+package TestCase_ds_algo;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import Page_object_ds_algo.LoginPage;
+
+      public class LoginTest extends BaseClass {
+	
+
+     @Test
+     
+     public void loginpage() {
+    	 
+   
+    
+    WebDriver driver = null;
+	LoginPage lgPage= new LoginPage (driver);
+   loginpage (); 
+    
+    
+    
+	
+	
+	
+	
+}
+
+	
+		
+	}

@@ -1,0 +1,446 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>55/2/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sat Jan 07 17:42:33 EST 2023</td>
+</tr>
+<tr><td>Total time:</td><td>73 seconds (73091 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testCases.HomePageTest.homepage()'><b>homepage</b><br>Test class: testCases.HomePageTest</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at testCases.HomePageTest.homepage(HomePageTest.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1874901958", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1874901958'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at org.testng.Assert.assertTrue(Assert.java:55)
+	at testCases.HomePageTest.homepage(HomePageTest.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>2</td>
+<td>testCases.HomePageTest@5e7cd6cc</td></tr>
+<tr>
+<td title='testCases.ArrayTest.Arrayslogin()'><b>Arrayslogin</b><br>Test class: testCases.ArrayTest</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at testCases.ArrayTest.Arrayslogin(ArrayTest.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2099793685", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2099793685'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at testCases.ArrayTest.Arrayslogin(ArrayTest.java:48)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>3</td>
+<td>testCases.ArrayTest@55de24cc</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testCases.TreeTest.PracticeQuestion()'><b>PracticeQuestion</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.SigninTest.SigninDDT()'><b>SigninDDT</b><br>Test class: testCases.SigninTest<br>Parameters: sahana9, user12345</td>
+<td></td>
+<td>1</td>
+<td>testCases.SigninTest@1c742ed4</td></tr>
+<tr>
+<td title='testCases.TreeTest.TreeTraversals()'><b>TreeTraversals</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.ArrayTest.PracticeQuestion()'><b>PracticeQuestion</b><br>Test class: testCases.ArrayTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.ArrayTest@55de24cc</td></tr>
+<tr>
+<td title='testCases.LinkedListTest.TypeOfLinkedListedPage()'><b>TypeOfLinkedListedPage</b><br>Test class: testCases.LinkedListTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.LinkedListTest@dc7df28</td></tr>
+<tr>
+<td title='testCases.TreeTest.Terminology()'><b>Terminology</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.GraphTest.Graph()'><b>Graph</b><br>Test class: testCases.GraphTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.GraphTest@7e990ed7</td></tr>
+<tr>
+<td title='testCases.LinkedListTest.LinledSignIn()'><b>LinledSignIn</b><br>Test class: testCases.LinkedListTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.LinkedListTest@dc7df28</td></tr>
+<tr>
+<td title='testCases.LinkedListTest.DeletionLinkedListedPython()'><b>DeletionLinkedListedPython</b><br>Test class: testCases.LinkedListTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.LinkedListTest@dc7df28</td></tr>
+<tr>
+<td title='testCases.ArrayTest.ArraysList()'><b>ArraysList</b><br>Test class: testCases.ArrayTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.ArrayTest@55de24cc</td></tr>
+<tr>
+<td title='testCases.ArrayTest.ShortedArrays()'><b>ShortedArrays</b><br>Test class: testCases.ArrayTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.ArrayTest@55de24cc</td></tr>
+<tr>
+<td title='testCases.RegistrationTest.RegistrationDDT()'><b>RegistrationDDT</b><br>Test class: testCases.RegistrationTest<br>Parameters: rose5466, try123455466, try1235466</td>
+<td></td>
+<td>0</td>
+<td>testCases.RegistrationTest@6a8658ff</td></tr>
+<tr>
+<td title='testCases.DataStructureTest.DataStructurePrecticeQuestion()'><b>DataStructurePrecticeQuestion</b><br>Test class: testCases.DataStructureTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.DataStructureTest@333d4a8c</td></tr>
+<tr>
+<td title='testCases.ArrayTest.BasicOperation()'><b>BasicOperation</b><br>Test class: testCases.ArrayTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.ArrayTest@55de24cc</td></tr>
+<tr>
+<td title='testCases.RegistrationTest.RegistrationDDT()'><b>RegistrationDDT</b><br>Test class: testCases.RegistrationTest<br>Parameters: Zee8819,   8819, 8819</td>
+<td></td>
+<td>0</td>
+<td>testCases.RegistrationTest@6a8658ff</td></tr>
+<tr>
+<td title='testCases.LinkedListTest.introductionLinkListed()'><b>introductionLinkListed</b><br>Test class: testCases.LinkedListTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.LinkedListTest@dc7df28</td></tr>
+<tr>
+<td title='testCases.QueueTest.QueuePracticeQuestions()'><b>QueuePracticeQuestions</b><br>Test class: testCases.QueueTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.QueueTest@69c81773</td></tr>
+<tr>
+<td title='testCases.LinkedListTest.TraversalLinkedListedPython()'><b>TraversalLinkedListedPython</b><br>Test class: testCases.LinkedListTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.LinkedListTest@dc7df28</td></tr>
+<tr>
+<td title='testCases.TreeTest.BinarySearchTrees()'><b>BinarySearchTrees</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.RegistrationTest.RegistrationDDT()'><b>RegistrationDDT</b><br>Test class: testCases.RegistrationTest<br>Parameters: mily5571, ab5571, ab5571</td>
+<td></td>
+<td>0</td>
+<td>testCases.RegistrationTest@6a8658ff</td></tr>
+<tr>
+<td title='testCases.LinkedListTest.InsertaionLinkedListedPython()'><b>InsertaionLinkedListedPython</b><br>Test class: testCases.LinkedListTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.LinkedListTest@dc7df28</td></tr>
+<tr>
+<td title='testCases.QueueTest.QueueImplementation()'><b>QueueImplementation</b><br>Test class: testCases.QueueTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.QueueTest@69c81773</td></tr>
+<tr>
+<td title='testCases.SigninTest.SigninDDT()'><b>SigninDDT</b><br>Test class: testCases.SigninTest<br>Parameters: abghbgh, ffgg</td>
+<td></td>
+<td>1</td>
+<td>testCases.SigninTest@1c742ed4</td></tr>
+<tr>
+<td title='testCases.TreeTest.TypesofTree()'><b>TypesofTree</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.QueueTest.QueueCollection()'><b>QueueCollection</b><br>Test class: testCases.QueueTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.QueueTest@69c81773</td></tr>
+<tr>
+<td title='testCases.TreeTest.ApplicationsBinaryTree()'><b>ApplicationsBinaryTree</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.ArrayTest.MaxConsecutive()'><b>MaxConsecutive</b><br>Test class: testCases.ArrayTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.ArrayTest@55de24cc</td></tr>
+<tr>
+<td title='testCases.TreeTest.ImplementationinPython()'><b>ImplementationinPython</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.QueueTest.QueueInPython()'><b>QueueInPython</b><br>Test class: testCases.QueueTest</td>
+<td></td>
+<td>2</td>
+<td>testCases.QueueTest@69c81773</td></tr>
+<tr>
+<td title='testCases.GraphTest.GraphPage()'><b>GraphPage</b><br>Test class: testCases.GraphTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.GraphTest@7e990ed7</td></tr>
+<tr>
+<td title='testCases.TreeTest.TypesBinaryTree()'><b>TypesBinaryTree</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.RegistrationTest.RegistrationDDT()'><b>RegistrationDDT</b><br>Test class: testCases.RegistrationTest<br>Parameters: zenny5209, abc1235209, 5209</td>
+<td></td>
+<td>0</td>
+<td>testCases.RegistrationTest@6a8658ff</td></tr>
+<tr>
+<td title='testCases.StackTest.StackOperations()'><b>StackOperations</b><br>Test class: testCases.StackTest</td>
+<td></td>
+<td>4</td>
+<td>testCases.StackTest@30f842ca</td></tr>
+<tr>
+<td title='testCases.RegistrationTest.RegistrationDDT()'><b>RegistrationDDT</b><br>Test class: testCases.RegistrationTest<br>Parameters: sahana95158, user123455158, user123455158</td>
+<td></td>
+<td>0</td>
+<td>testCases.RegistrationTest@6a8658ff</td></tr>
+<tr>
+<td title='testCases.LinkedListTest.PracticeQuastionLinkedListedPython()'><b>PracticeQuastionLinkedListedPython</b><br>Test class: testCases.LinkedListTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.LinkedListTest@dc7df28</td></tr>
+<tr>
+<td title='testCases.ArrayTest.FindNumber()'><b>FindNumber</b><br>Test class: testCases.ArrayTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.ArrayTest@55de24cc</td></tr>
+<tr>
+<td title='testCases.StackTest.StackImplementation()'><b>StackImplementation</b><br>Test class: testCases.StackTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.StackTest@30f842ca</td></tr>
+<tr>
+<td title='testCases.GraphTest.GraphRepresentations()'><b>GraphRepresentations</b><br>Test class: testCases.GraphTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.GraphTest@7e990ed7</td></tr>
+<tr>
+<td title='testCases.SigninTest.SigninDDT()'><b>SigninDDT</b><br>Test class: testCases.SigninTest<br>Parameters: svhjj, hjjj</td>
+<td></td>
+<td>0</td>
+<td>testCases.SigninTest@1c742ed4</td></tr>
+<tr>
+<td title='testCases.DataStructureTest.DatastructureTimeComplexity()'><b>DatastructureTimeComplexity</b><br>Test class: testCases.DataStructureTest</td>
+<td></td>
+<td>2</td>
+<td>testCases.DataStructureTest@333d4a8c</td></tr>
+<tr>
+<td title='testCases.TreeTest.TraversalsIllustration()'><b>TraversalsIllustration</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.RegistrationTest.RegistrationDDT()'><b>RegistrationDDT</b><br>Test class: testCases.RegistrationTest<br>Parameters: 2943, 2943,  2943</td>
+<td></td>
+<td>0</td>
+<td>testCases.RegistrationTest@6a8658ff</td></tr>
+<tr>
+<td title='testCases.RegistrationTest.sighOutOnRegistrationPage()'><b>sighOutOnRegistrationPage</b><br>Test class: testCases.RegistrationTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.RegistrationTest@6a8658ff</td></tr>
+<tr>
+<td title='testCases.TreeTest.BinaryTree()'><b>BinaryTree</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.QueueTest.QueueOperations()'><b>QueueOperations</b><br>Test class: testCases.QueueTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.QueueTest@69c81773</td></tr>
+<tr>
+<td title='testCases.TreeTest.OverviewTree()'><b>OverviewTree</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.ArrayTest.ApplicationOfArrays()'><b>ApplicationOfArrays</b><br>Test class: testCases.ArrayTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.ArrayTest@55de24cc</td></tr>
+<tr>
+<td title='testCases.TreeTest.ImplementationBinaryTrees()'><b>ImplementationBinaryTrees</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.ArrayTest.ArraysPython()'><b>ArraysPython</b><br>Test class: testCases.ArrayTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.ArrayTest@55de24cc</td></tr>
+<tr>
+<td title='testCases.StackTest.StackPracticeQuestion()'><b>StackPracticeQuestion</b><br>Test class: testCases.StackTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.StackTest@30f842ca</td></tr>
+<tr>
+<td title='testCases.StackTest.StackApplications()'><b>StackApplications</b><br>Test class: testCases.StackTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.StackTest@30f842ca</td></tr>
+<tr>
+<td title='testCases.TreeTest.ImplementationOfBST()'><b>ImplementationOfBST</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.LinkedListTest.ImplementLinkedListedPython()'><b>ImplementLinkedListedPython</b><br>Test class: testCases.LinkedListTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.LinkedListTest@dc7df28</td></tr>
+<tr>
+<td title='testCases.TreeTest.BinaryTreeTraversals()'><b>BinaryTreeTraversals</b><br>Test class: testCases.TreeTest</td>
+<td></td>
+<td>1</td>
+<td>testCases.TreeTest@4d14b6c2</td></tr>
+<tr>
+<td title='testCases.LinkedListTest.CreatedLinkedListedPage()'><b>CreatedLinkedListedPage</b><br>Test class: testCases.LinkedListTest</td>
+<td></td>
+<td>0</td>
+<td>testCases.LinkedListTest@dc7df28</td></tr>
+</table><p>
+</body>
+</html>

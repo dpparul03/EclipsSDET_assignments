@@ -1,0 +1,74 @@
+package TestCase_ds_algo;
+
+import java.time.Duration;
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import utilities.ReadConfig;
+
+
+public class BaseClass {
+
+	ReadConfig readconfig=new ReadConfig();
+
+	public String baseUrl=readconfig.getApplicationUrl();
+	public String username=readconfig.getUsername();
+	public String password=readconfig.getPassword();
+	public String chromepath=readconfig.getChromePath();
+	public String edgepath=readconfig.getEdgePath();
+	public static Logger logger;
+	public static WebDriver driver;	
+
+
+	@Parameters("browser")
+	@BeforeClass
+	public void setup(String br)
+	{
+
+		if(br.equals("chrome"))
+
+		{
+
+			System.setProperty("webdriver.chrome.driver",readconfig.getChromePath());
+			driver = new ChromeDriver();
+		}
+
+		else if(br.equals("edge"))
+		{
+			System.setProperty("webdriver.chrome.driver",readconfig.getEdgePath());
+			driver = new EdgeDriver();
+		}
+
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));	
+		driver.manage().window().maximize(); 	
+		driver.get(baseUrl);
+
+
+		Logger log = LogManager.getLogger( "BaseClass");
+
+		log.info(" Url Confirmed ");
+
+		PropertyConfigurator.configure("Log4j.properties");
+
+	}
+
+
+	@AfterClass
+	public void tearDown()
+	{
+		driver.quit();
+	}
+
+
+
+
+}

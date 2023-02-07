@@ -1,0 +1,136 @@
+package ds_algo;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+
+public class ListedPage{
+
+	private static final String Sendkey = null;
+
+
+	WebDriver driver;
+
+
+	 @FindBy(xpath ="//body[1]/div[1]/div[1]/div[1]/a[1]/button[1]") WebElement GetStartbtn;        
+	@FindBy (xpath ="//a[@class='navbar-brand']") WebElement HomePageBtn;
+	@FindBy (xpath ="//a[normalize-space()='Data Structures']")WebElement DataStructures;
+	@FindBy (xpath ="//body/div[2]/div[3]/div/div/a")WebElement GetStartedBtn;
+    @FindBy (xpath ="//div[@class='alert alert-primary']")WebElement GetError;
+	@FindBy (xpath = "//a[normalize-space()='Sign in'] ")WebElement SignIn;
+	@FindBy (xpath ="//a[normalize-space()='Register!']" )WebElement Register;
+	@FindBy (xpath = "//input[@id='id_username']")WebElement UserName;
+	@FindBy (xpath = "//input[@id='id_password1'] ")WebElement Password1;
+	@FindBy (xpath = "//input[@id='id_password2'] ")WebElement Password2;
+	@FindBy (css ="//input[value='Register']")WebElement ConfirmRegister;
+	
+	
+	
+	
+	@BeforeTest
+	public void intialize () throws IOException{
+		System.setProperty("webdriver.chrome.driver","C:\\Deepak\\Parul_Learning\\SDET81\\Assignment\\Maven_1\\src\\test\\resources\\drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
+	}
+
+	@Test
+	public void homePage() {	
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));	
+		driver.manage().window().maximize(); 	
+		driver.get("https://dsportalapp.herokuapp.com");
+		PageFactory.initElements( driver, this);
+		
+     SoftAssert softAssert=new SoftAssert ();
+     
+		   GetStartbtn.click();
+		   HomePageBtn.click();
+		   DataStructures.click();
+		    GetStartedBtn.click();
+		    
+		   String expectedError = "You are not sign in";
+		   String actualError = "You are not log in  ";
+		   System.out.println(" Error ");
+		
+		softAssert.assertEquals(false, false, actualError     );
+		
+          softAssert = assertAll ();
+		   
+          
+		   SignIn.click();
+		    Register.click() ;
+		    UserName.sendKeys("ParulSharma");
+		    Password1.sendKeys("parul123 " );
+		    Password2.sendKeys("parul123" );
+		   ;
+		    ConfirmRegister.submit();
+		}
+
+	private SoftAssert assertAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}    
+
+
+
+
+
+}
+
+
+
+
+
+/*	
+ListedPage  page = PageFactory.initElements(driver,ListedPage .class);
+
+public void clickGetstartBtn() {
+	GetStartBtn.click();
+
+}
+
+public void clickHomePageBtn() {	
+	HomePageBtn.click();
+
+}
+
+public void clickDataStructuresBtn() {	
+	DataStructures.click();
+}
+
+public void clickGetStartedBtn() {	
+	 GetStartedBtn.click();
+}
+
+/*
+public void link () throws Exception {
+
+	ListedPage  page = PageFactory.initElements(driver,ListedPage .class);
+
+
+	GetStartBtn.click();
+
+	HomePageBtn.click();
+
+	DataStructures.click();
+
+	GetStartedBtn.click();
+
+}
+ */
+
+
+
+
+
+
+
